@@ -2,10 +2,6 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.data.large_tcp_window_size=true
 
-# Qualcomm Connectivity Engine (CNE) module
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1
-
 # Time-service
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
@@ -34,7 +30,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Google WiFi-Display
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
     tunnel.audio.encode = false
 
 # Snapdragon audio processing
@@ -65,8 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.location \
+    persist.gps.qc_nlp_in_use=0 \
     ro.gps.agps_provider=1
 
 # Touchscreen
@@ -77,21 +71,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.camera.facialproc=false \
     ro.qc.sdk.gestures.camera=false \
-    camera.disable_zsl_mode=1 \
-    persist.camera.HAL3.enabled=0
+    camera.disable_zsl_mode=1
 
 # CameraAV MM HAL1 hacks
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
 
-# librqbalance enablement
+# MPDecision
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/system/lib/librqbalance.so
-
-# WiFi
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0
+    ro.qualcomm.perf.cores_online=2 \
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \

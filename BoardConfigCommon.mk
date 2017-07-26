@@ -14,6 +14,9 @@
 
 BOARD_VENDOR := sony
 
+# Use Snapdragon LLVM Compiler if available
+TARGET_USE_SDCLANG := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/sony/msm8974-common/include
 
@@ -89,6 +92,9 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 
 # Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 TARGET_RIL_VARIANT := caf
